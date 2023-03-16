@@ -58,6 +58,7 @@ class Tag(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(
         'Post',
+        related_name='comments',
         on_delete=models.CASCADE,
         verbose_name='Пост, к которому написан')
     author = models.ForeignKey(
